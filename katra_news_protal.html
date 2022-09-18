@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katra News Portal for uploding news</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        #container {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            background-image: linear-gradient(rgba(190, 35, 135, 0.545), rgba(0, 166, 255, 0.633)), url("https://charmingprogrammer.github.io/Katra-News/Katra%20News.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #front_page {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(120deg, rgb(0, 166, 255), rgb(255, 0, 72));
+            position: fixed;
+            z-index: 1234;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: center;
+            transition: .5s ease-in;
+            top: 0;
+        }
+
+        img {
+            height: 120px;
+            width: 120px;
+            border-radius: 100%;
+            background: white;
+            margin-top: 150px;
+            text-shadow: 0px 1px 11px #0000009d;
+        }
+
+        h1 {
+            padding: 10px 20px;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 0px 1px 11px #0000009d;
+        }
+        form{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #Password {
+            background: white;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            box-shadow: 0 0 5px 1px #1a181838;
+            font-weight: 900;
+            font-size: large;
+            transition: .2s ease-in-out;
+            margin-top: 10px;
+        }
+
+        #Password:hover {
+            background: linear-gradient(190deg, rgb(40, 155, 216), rgb(255, 0, 72));
+            color: white;
+        }
+
+        #btn {
+            padding: 10px 20px;
+            margin-top: 10px;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-weight: 900;
+            border: none;
+            box-shadow: 0 0 5px 1px #1a181838;
+            cursor: pointer;
+            transition: .2s ease-in;
+            font-size: large;
+            color: #0000009d;
+        }
+
+        #btn:hover {
+            background: linear-gradient(190deg, rgb(40, 155, 216), rgb(255, 0, 72));
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSe9U15TogX5HZqM7iHTzXbFEkkwdyJarzPYT8urhGARn1xNhA/viewform?embedded=true"
+            width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+    <!-- overlay for protecting the main form -->
+    <div id="front_page">
+        <img src="https://charmingprogrammer.github.io/Katra-News/%E0%A4%95%20(1).png" alt="katra news logo">
+        <h1>Please Enter the Password For Portal Opening</h1>
+        <form onsubmit="Open(); return false" >
+            <input type="text" placeholder="Enter Password" id="Password">
+            <button id="btn" type="submit">Open</button></form>
+    </div>
+
+    <script>
+        const Password = document.getElementById('Password');
+        
+
+        function Open() {
+            console.log(Password.value);
+            if (Password.value === "Katra News") {
+                document.getElementById('front_page').style.top = "-100%";
+            }
+            else{
+                alert("Password Incorrect")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
